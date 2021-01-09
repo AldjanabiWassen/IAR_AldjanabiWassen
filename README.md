@@ -1,6 +1,6 @@
-sentiment analysis of Algerians users tweets regarding political movements using big data analytics
+Arabic Hate Speech Classification using Pre-trained Multi-task Learning Models
 related papers:
- 1. https://core.ac.uk/download/pdf/81962001.pdf
- 2. https://iopscience.iop.org/article/10.1088/1757-899X/925/1/012015/pdf
- 3. https://iopscience.iop.org/article/10.1088/1757-899X/925/1/012015/pdf
+ 1. https://www.sciencedirect.com/science/article/abs/pii/S2468696420300379
+ 2. FORTUNA, P.; SOLER, J.; WANNER, L. Toxic, hateful, offensive or abusive?  what arewe really classifying?  an empirical analysis of hate speech datasets
+ 3. https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0237861
  
