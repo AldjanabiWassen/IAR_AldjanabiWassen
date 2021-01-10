@@ -1,0 +1,69 @@
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+
+% Adjusting margins to personal my need
+\addtolength{\oddsidemargin}{-.5in}
+\addtolength{\evensidemargin}{-.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1in}
+
+% Graphics
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+
+% Math
+\usepackage{amssymb}
+\usepackage{amsmath} % Required for some math elements 
+
+% Other
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{lipsum}
+\usepackage{hyperref}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	MAIN PART
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+\title{Home work one for IAR course } % Title
+
+\author{Aldjanabi wassen}
+\date{\today} % Date for the report
+\maketitle % Inserts the title, author and date
+
+\section{Subject area}
+
+This project tackles the arabic hate speech classification using  Pre-trained Multi-task Learning Models 
+
+\section{What's the goal !!}
+
+\begin{itemize}
+\item Evaluating and comparing the performance of the model
+\item Adapting an existing MTL-DNN model to perform Arabic hate speech classification 
+\end{itemize}
+
+\section{Why is it important?}
+this project aims at building an Arabic hate speech classification model to deal with the increasing hate comment on social media
+
+\section{Preliminary ideas}
+\begin{itemize}
+\item collecting dataset concering the arabic hate speech
+\item using the language model BERT   
+\item adapting LM for multi-task learning 
+
+\end{itemize}
+
+
+
+
+\end{document}
