@@ -1,0 +1,159 @@
+\documentclass[paper=a4, fontsize=11pt]{scrartcl}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+
+%\usepackage[english]{babel}															
+\usepackage[english]{babel}
+\usepackage{indentfirst}		% for indent
+\usepackage[utf8]{inputenc}
+
+
+\usepackage[protrusion=true,expansion=true]{microtype}	
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[pdftex]{graphicx}	
+\usepackage{url, array}
+\usepackage[num,abnt-repeated-author-omit=yes]{abntex2cite}
+
+
+%%% Custom sectioning
+\usepackage{sectsty}
+\allsectionsfont{\centering \normalfont\scshape}
+
+
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}											% No page header
+\fancyfoot[L]{}											% Empty 
+\fancyfoot[C]{}											% Empty
+\fancyfoot[R]{\thepage}									% Pagenumbering
+\renewcommand{\headrulewidth}{0pt}			% Remove header underlines
+\renewcommand{\footrulewidth}{0pt}				% Remove footer underlines
+\setlength{\headheight}{13.6pt}
+
+
+%%% Equation and float numbering
+\numberwithin{equation}{section}		% Equationnumbering: section.eq#
+\numberwithin{figure}{section}			% Figurenumbering: section.fig#
+\numberwithin{table}{section}				% Tablenumbering: section.tab#
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+%\date{\today}
+
+%%% Begin document
+\begin{document}
+		
+{\flushleft\horrule{2pt}
+\begin{center}
+{\includegraphics[height=0.09\textwidth]{Figs/logo_english.png}} 
+\begin{tabular}{ m{1.8cm} m{10cm} m{1.8cm}}
+\begin{center}
+\end{center}
+&
+\begin{center} 
+{\small
+{Adrar University} \\
+{Faculty of Science and Technology} \\
+{Department of Mathematics and Computer Science}} \\
+
+\end{center}
+&
+
+\begin{center}
+\end{center}
+\end{tabular}
+\end{center}
+\flushleft \horrule{2pt}\\[1cm]
+}
+
+
+\begin{center}
+
+{
+\huge  
+Initiation to Research (Course) \\
+\vspace{0.2cm}
+2\textsuperscript{nd} Year Master (S3) \\
+\vspace{0.2cm}
+2020/2021}\\
+
+\vspace{1cm}
+
+{
+\Huge   
+\textbf{Arabic Hate Speech Classification using Pre-trained Multi-task Learning Models }}\\
+\vspace{1cm}
+
+%Domain: Mathematics and Computer Science \\
+%Major: Informatics - Intelligent Systems \\
+{
+\Large
+\textbf{Aldjanbi wassen \footnote{Email: wassen.eldjanabi@gmail.com}  }}\\
+\vspace{3cm}
+
+{
+\large
+\textbf{Instructor: Dr. Abdelghani DAHOU \footnote{Email: dahou.abdghani@univ-adrar.edu.dz}}}\\
+\today
+\end{center}
+\pagebreak
+\tableofcontents
+\pagebreak
+\listoffigures
+\pagebreak
+\listoftables
+\pagebreak
+
+
+
+
+
+\section{Abstract}
+social media platforms has provided opportunities for people to connect but has also opened the door for misuse with the spread of hate speech, according to the Cambridge dictionary hate speech is defined as "public speech that expresses hate or encourages violence towards a person or group based on something such as race, religion, sex, or sexual orientation". Detecting such content is crucial for understanding and predicting conflict,in this research proposal we tackled this problem by adapting an existing multi-task learning for deep learning model (MTL-DNN) to perform Arabic hate speech classification, we used the AraBert model with the addition of MTL to get better performance. 
+
+
+\section{Introduction}
+Hate speech was found to negatively impact the psychological well-being of individuals and to deteriorate inter-group relations on the societal level (Tynes et al., 2008)\cite{tynes2008online}. As such, detection and prevention mechanisms should be setup to deal with such content. Machine learning algorithms can be employed to automatically detect these behaviors by relying on recent techniques in natural language processing that have shown a significant performance.
+
+A small number of works targeted this problem but by the detecting both hate and offensive speech in Arabic simultaneously,for exemple {Haddad et al.(2019)} targeted the problem of hate and offensive speech detection for the Tunisian dialect using Support Vector Machine (SVM) and Naive Bayes classifier.In the 4th Workshop on Open-Source Arabic Corpora and Processing Tools (OSACT4) {Marc Djandji et al.(2020)} developed a multi-task learning using AraBert model.{Ibrahim Abu-Farha et al(2020)} in the same shared task proposed a multitask learning architecture using CNN-BiLSTM model.
+
+The models that we will experiment is on fine-tuning the Arabic Bidirectional Encoder Representation from Transformer (AraBERT) model (AUBMind-Lab, 2020),the aim of this study is to train our model on multiple corpora.
+
+
+
+\section{Related Works}.
+\begin{itemize}
+    \item Multi-Task Deep Neural Networks for Natural Language Understanding: In this paper (Xiaodong Liu et al(2020))\cite{liu2019multi}combined multi-task learning and language model pre-training and proposed a new Multi-Task Deep Neural Network (MT-DNN) we took this model as a based model and adapted it to perform on Arabic hate speech classification 
+    
+    \item Hate Speech Detection: very few works in the literature target the problem of Arabic hate speech detection (Albadi et al. (2018))\cite{albadi2018they}introduced the first dataset containing 6.6K Arabic hate-speech tweets targeting religious groups,they compared a lexicon-based classifier, SVM classifier trained with character n-gram features.
+    
+    \item Hate and Offensive Speech Detection:(Haddad et al. (2019))\cite{haddad2019t} created a dataset of 6K tweets containing hate and offen- sive speech in the Tunisian dialect. For binary (offensive, non-offensive) and multi-class (offensive, hate, or normal) classification of hate and offensive speech, the authors ex- tracted several n-gram features from each tweet and applied Term Frequency (TF) weighing to select the most effective features. The extracted features were then used to develop an SVM and Naive Bayesian (NB) classifier.(Marc Djandji et al(2020))\cite{djandji2020multi} proposed a model based on AraBERT with Multitask Learning, which solves the data imbalance problem by leveraging information from multiple tasks simultaneously.(Ibrahim Abu-Farha(2020))\cite{farha2020multitask} developed a  multitask learning architecture, based on CNN-BiLSTM, that was trained to detect hate-speech and offensive language and predict sentiment
+\end{itemize}
+
+\section{Methodology/Research Methods}
+We based our approaches on the recently released AraBERT model with the multitask learning,our model consists of two components: a part that gets trained by all the tasks data in order to extract a general feature representation for all the tasks and a task-specific part that gets trained only by the task-specific
+
+for the test dataset we used the SemEval 2020 Task 12 Arabic offensive language dataset (OffensEval2020, Subtask A), contain 10K tweets that were annotated for offensiveness with labels (OFF or NOT OFF) and hate speech with labels (HS or NOT HS). and few data preprocessing was performed where user mentions were replaced with @USER, URLs were replaced with URL, and empty lines were replaced with <LF>
+
+due to the lack of the hate speech dataset we trained our model on multiple datesets. 
+
+\pagebreak
+\section{Project Timeline}
+
+This work has Started from january 3rd, 2020 it started by having an overview of the subjet and reading papers related to the current researches and techniques. For now we are trying to adabt the MTL model to arabic classification, then we will try to get to our objective with is training our model on multiple corporas . \\
+\begin{figure}
+    \centering
+    \includegraphics[height=0.55\textwidth]{capture.png}
+    \caption{Gantt chart}
+    \label{fig:my_label}
+\end{figure}
+
+\pagebreak
+
+\bibliographystyle{abnt-num}
+\bibliography{ref}
+
+\end{document}
